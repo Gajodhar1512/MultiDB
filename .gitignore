@@ -1,0 +1,16 @@
+*.env
+__pycache__/
+*.py[cod]
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+*.pyc
+db.sqlite3

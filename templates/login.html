@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<form class="site-form" action="{% url 'login' %}" method="post">
+	        <fieldset>
+	            <legend>
+	                <h1>Login</h1>
+	            </legend>
+	        {% csrf_token %}
+	        <p>Email: <input type="text" name="email"></p>
+	        <p>Password: <input type="text" name="password"></p>	        
+	        <input type="submit" value="Login">
+	        </fieldset>
+	    </form>
+</body>
+</html>
