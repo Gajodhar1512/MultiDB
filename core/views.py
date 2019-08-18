@@ -21,15 +21,23 @@ def login_view(request):
             except:
                 return HttpResponse("User doesn't exist") 
             if user.password != password:
-                return HttpResponse("Incorrect password")                  
-            login(request, user)                     
+                return HttpResponse("Incorrect password") 
+            user.is_active=True
+            user.save()                 
+            login(request, user)                                             
             return redirect('home')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
 
+def logout_view(request):
+    logout(request)
+    return redirect('login')
 
-def home(request):
-    
-    return HttpResponse("Welcome")
+
+
+@login_required(login_url='login')
+def home(request):    
+    dbs = request.user.dbs.all()
+    return render(request, 'home.html',{'dbs':dbs, 'user':request.user})

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,37 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'database1': {
+        'NAME': 'user_data',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+    },
+    'database2': {
+        'NAME': 'user_data',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+    },
+    # 'database3': {
+    #     'NAME': 'user_data',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER': 'mysql_user',
+    #     'PASSWORD': '1234',
+    # },
+    # 'database4': {
+    #     'NAME': 'user_data',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER': 'mysql_user',
+    #     'PASSWORD': '1234',
+    # },
+    # 'database5': {
+    #     'NAME': 'user_data',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER': 'mysql_user',
+    #     'PASSWORD': '1234',
+    # },
 }
 
 
@@ -122,7 +153,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL='login'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

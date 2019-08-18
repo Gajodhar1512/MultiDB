@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<a href="{% url 'logout' %}">Logout</a><br>
+	<a href="#">Create a Product here</a>
+	<p>Welcome {{ user.email }}</p>
+	{% for db in dbs %}
+		{{db.db_name}}<br>
+	{% endfor %}
+
+</body>
+</html>

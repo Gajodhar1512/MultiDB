@@ -1,5 +1,5 @@
 from django.contrib import admin
-# from django.contrib.admin.widgets import FilteredSelectMultiple
+
 from core.models import DataBase, User
 # Register your models here.
 

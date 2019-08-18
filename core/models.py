@@ -83,8 +83,7 @@ class User(AbstractBaseUser, models.Model):
 
 def user_post_save(sender, instance, signal, created, *args, **kwargs):
     if created:
-        # sends email to user when the user is created.
-        import pdb;pdb.set_trace()
+        # sends email to user when the user is created.         
         subject = 'Your Account is ready'
         message = """
                         Please follow the given link and login with the below mentioned credentials.
@@ -96,6 +95,3 @@ def user_post_save(sender, instance, signal, created, *args, **kwargs):
 
 
 signals.post_save.connect(user_post_save, sender=User)
-
-
-
